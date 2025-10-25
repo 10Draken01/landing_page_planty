@@ -1,10 +1,13 @@
-import './App.css'
+import { AppProvider } from './Core/Context/AppProvider'
 import HomeView from './Features/Home/presentation/page/HomeView'
+
 
 function App() {
 
   return (
-    <HomeView />
+    <AppProvider>
+      <HomeView />
+    </AppProvider>
   )
 }
 
