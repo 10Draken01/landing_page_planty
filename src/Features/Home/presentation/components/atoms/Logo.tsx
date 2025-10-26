@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { AppColors } from '../../../../../Core/Theme/AppColors';
+import { useAppStore } from '../../../../../Core/Context/AppProvider';
 
 const SvgLogo = styled.svg`
   min-width: 100px;
@@ -7,15 +8,24 @@ const SvgLogo = styled.svg`
   max-height: 100%;
   width: 100px;
   height: auto;
-  fill: ${AppColors.onPrimaryDark} !important;
+  fill: ${AppColors.onPrimaryLight} !important;
   
   path {
-    fill: ${AppColors.onPrimaryDark} !important;
+    fill: ${AppColors.onPrimaryLight} !important;
   }
+
+    @media (prefers-color-scheme: dark) {
+      fill: ${AppColors.onPrimaryDark} !important;
+
+      path {
+        fill: ${AppColors.onPrimaryDark} !important;
+      }
+    }
+    
 `;
 
 export default function Logo() {
-    return (
+    return ( 
         <SvgLogo 
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 107 64"

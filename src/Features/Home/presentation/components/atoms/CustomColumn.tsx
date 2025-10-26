@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-export const CustomColumn = styled.div`
+interface CustomColumnProps {
+    padding?: number;
+    gap?: number;
+    alignItems?: string;
+    justifyContent?: string;
+}
+
+export const CustomColumn = styled.div<CustomColumnProps>`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: ${({ alignItems }) => alignItems || 'center'};
+  justify-content: ${({ justifyContent }) => justifyContent || 'center'};
+  padding: ${({ padding }) => padding || 16}px;
 `;
